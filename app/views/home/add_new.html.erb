@@ -1,0 +1,31 @@
+<h1> Add new contact </h1>
+
+<%= form_for @object1, url: home_create_new_path do |f| %>
+ <% if @object1.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@object1.errors.count, "error") %> prohibited
+        this contact from being saved:
+      </h2>
+      <ul>
+        <% @object1.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<p>
+<%= f.label :mobile_no %>
+<%= f.text_field :mobile_no %>
+
+<p>
+<%= f.label :email %>
+<%= f.text_field :email %>
+
+<p>
+<%=f.submit %>
+
+<% end %>

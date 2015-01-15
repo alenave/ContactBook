@@ -1,0 +1,34 @@
+<h1> Edit the Contact of <%= @record.name unless @record.nil?%> </h1>
+
+<%= form_for @record, url: home_updation_path do |f| %>
+ <% if @record.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@record.errors.count, "error") %> prohibited
+        this contact from being saved:
+      </h2>
+      <ul>
+        <% @record.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%= f.hidden_field :id %>
+
+<%= f.label :name %>
+<%= f.text_field  :name %>
+
+<p>
+<%= f.label :mobile_no %>
+<%= f.text_field :mobile_no %>
+
+<p>
+<%= f.label :email %>
+<%= f.text_field :email %>
+
+<p>
+<%=f.submit %>
+
+<% end %>
