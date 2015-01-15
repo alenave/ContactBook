@@ -1,0 +1,11 @@
+<h1> View the Contact of <%= @record.name %> </h1>
+<label>Name: </label>
+<%= label :name,  @record.name %>
+<p>
+<label>Mobile No: </label>
+<%= label :mobile_no,  @record.mobile_no %>
+<p>
+<label>Email: </label>
+<%= label :email,  @record.email %>
+
+<%= link_to 'Home', root_path %>

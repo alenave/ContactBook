@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PhoneBook</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg %>
+  <% end %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

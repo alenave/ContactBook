@@ -1,0 +1,11 @@
+<h1>Contact Book</h1>
+<a href= "<%= home_add_new_path %>"><input type="button" name="add" value="Add New"/></a>
+<a href= "<%= home_edit_path %>"><input type="button" name="edit" value="Update Existing"/></a>
+<a href= "<%= home_delete_path %>"><input type="button" name="delete" value="Delete"/></a>
+<p><h4> Find a contact </h4>
+
+<% form_tag home_search_path do %>
+  <label for="search">Search</label>
+  <%= text_field_tag :search %>
+ <%= submit_tag "Submit" %>
+<% end %>
